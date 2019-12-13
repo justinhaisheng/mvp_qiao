@@ -1,0 +1,2 @@
+include ':app', ':dagger2'
+rootProject.name='mvp_qiao'
