@@ -8,6 +8,7 @@ import com.aispeech.dagger2.bean.activity.base.IActivity;
 import com.aispeech.dagger2.component.DaggerActivityComponent;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,7 +19,13 @@ public class DaggerActivity extends AppCompatActivity {
     private TextView mDagger;
 
     @Inject
-    BaseActivity mBaseActivity;
+    @Named("home")
+    BaseActivity mBaseHomeActivity;
+
+    @Inject
+    @Named("work")
+    BaseActivity mBaseWorkActivity;
+
     @Inject
     IActivity mIActivity;
 
@@ -29,7 +36,7 @@ public class DaggerActivity extends AppCompatActivity {
         mDagger = findViewById(R.id.tv_dagger);
         //DaggerPeopleComponet.create().inject(this);
         DaggerActivityComponent.create().inject(this);
-        mDagger.setText(mBaseActivity.onCreate() + mIActivity.resume());
+        mDagger.setText(mBaseHomeActivity.onCreate() + mIActivity.resume()+mBaseWorkActivity.onCreate());
 
     }
 
