@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DaggerActivity extends AppCompatActivity {
 
-    @Inject
+  //  @Inject
     People mPeople;
     private TextView mDagger;
 
@@ -26,5 +26,11 @@ public class DaggerActivity extends AppCompatActivity {
 
         mDagger.setText(mPeople.doWhat());
 
+    }
+
+    //set 方法的注入方式
+    @Inject
+    public void setPeople(People people){
+        this.mPeople = people;
     }
 }

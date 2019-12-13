@@ -1,6 +1,6 @@
 package com.aispeech.dagger2.component;
 
-import android.app.Activity;
+import com.aispeech.dagger2.DaggerActivity;
 
 import dagger.Component;
 
@@ -11,6 +11,6 @@ import dagger.Component;
  */
 @Component
 public interface PeopleComponet {
-    void inject(Activity activity);
+    void inject(DaggerActivity activity);
 
 }

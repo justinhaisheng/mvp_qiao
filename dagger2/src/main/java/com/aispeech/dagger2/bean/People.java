@@ -9,13 +9,15 @@ import javax.inject.Inject;
  */
 public class People {
 
-    @Inject
-    public People(){
+    private Tools tools;
 
+    @Inject
+    public People(Tools tools){
+        this.tools = tools;
     }
 
     public String doWhat(){
-        return "eat";
+        return "eat" + tools.getCar();
     }
 
 }
