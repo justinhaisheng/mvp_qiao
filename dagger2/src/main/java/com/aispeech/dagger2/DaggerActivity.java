@@ -1,5 +1,6 @@
 package com.aispeech.dagger2;
 
+import android.app.Application;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -31,13 +32,16 @@ public class DaggerActivity extends AppCompatActivity {
     @Inject
     IActivity mIActivity;
 
+    @Inject
+    Application mApplication;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dagger);
         mDagger = findViewById(R.id.tv_dagger);
         //DaggerPeopleComponet.create().inject(this);
-        DaggerActivityComponent.create().inject(this);
+        DaggerActivityComponent.builder().application(getApplication()).build().inject(this);
         mDagger.setText(mBaseHomeActivity.get().onCreate() + mIActivity.resume()+mBaseWorkActivity.onCreate());
 
     }

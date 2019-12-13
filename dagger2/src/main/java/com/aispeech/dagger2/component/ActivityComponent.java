@@ -1,8 +1,11 @@
 package com.aispeech.dagger2.component;
 
+import android.app.Application;
+
 import com.aispeech.dagger2.DaggerActivity;
 import com.aispeech.dagger2.Module.Activity2Module;
 
+import dagger.BindsInstance;
 import dagger.Component;
 
 /**
@@ -13,4 +16,12 @@ import dagger.Component;
 @Component(modules = Activity2Module.class)
 public interface ActivityComponent {
     void inject(DaggerActivity activity);
+
+    //绑定Application对象：
+    @Component.Builder
+    interface Builder{
+        ActivityComponent build();
+        @BindsInstance
+        ActivityComponent.Builder application(Application application);
+    }
 }
