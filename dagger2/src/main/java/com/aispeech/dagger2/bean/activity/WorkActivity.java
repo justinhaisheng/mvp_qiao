@@ -18,6 +18,6 @@ public  class WorkActivity extends BaseActivity {
 
     @Override
     public String onCreate() {
-        return "work actvity";
+        return "Work actvity";
     }
 }

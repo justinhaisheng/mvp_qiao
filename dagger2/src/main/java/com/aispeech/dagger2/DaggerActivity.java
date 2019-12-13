@@ -3,12 +3,13 @@ package com.aispeech.dagger2;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.aispeech.dagger2.annotation.Home;
+import com.aispeech.dagger2.annotation.Work;
 import com.aispeech.dagger2.bean.activity.base.BaseActivity;
 import com.aispeech.dagger2.bean.activity.base.IActivity;
 import com.aispeech.dagger2.component.DaggerActivityComponent;
 
 import javax.inject.Inject;
-import javax.inject.Named;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,11 +20,11 @@ public class DaggerActivity extends AppCompatActivity {
     private TextView mDagger;
 
     @Inject
-    @Named("home")
+    @Home
     BaseActivity mBaseHomeActivity;
 
     @Inject
-    @Named("work")
+    @Work
     BaseActivity mBaseWorkActivity;
 
     @Inject

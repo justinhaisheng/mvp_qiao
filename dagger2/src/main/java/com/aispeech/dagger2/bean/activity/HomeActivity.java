@@ -18,6 +18,6 @@ public class HomeActivity extends BaseActivity {
 
     @Override
     public String onCreate() {
-        return "home create";
+        return "Home create";
     }
 }
