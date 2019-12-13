@@ -12,6 +12,7 @@ import com.aispeech.dagger2.component.DaggerActivityComponent;
 import javax.inject.Inject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import dagger.Lazy;
 
 public class DaggerActivity extends AppCompatActivity {
 
@@ -21,7 +22,7 @@ public class DaggerActivity extends AppCompatActivity {
 
     @Inject
     @Home
-    BaseActivity mBaseHomeActivity;
+    Lazy<BaseActivity> mBaseHomeActivity;
 
     @Inject
     @Work
@@ -37,7 +38,7 @@ public class DaggerActivity extends AppCompatActivity {
         mDagger = findViewById(R.id.tv_dagger);
         //DaggerPeopleComponet.create().inject(this);
         DaggerActivityComponent.create().inject(this);
-        mDagger.setText(mBaseHomeActivity.onCreate() + mIActivity.resume()+mBaseWorkActivity.onCreate());
+        mDagger.setText(mBaseHomeActivity.get().onCreate() + mIActivity.resume()+mBaseWorkActivity.onCreate());
 
     }
 
