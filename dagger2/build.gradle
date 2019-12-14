@@ -39,5 +39,3 @@ dependencies {
     implementation 'com.google.dagger:dagger-android-support:2.19' //用于提供support类相关功能
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.19'
 }
-
-

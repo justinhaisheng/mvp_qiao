@@ -22,6 +22,6 @@ public interface ActivityComponent {
     interface Builder{
         ActivityComponent build();
         @BindsInstance
-        ActivityComponent.Builder application(Application application);
+        Builder application(Application application);
     }
 }
